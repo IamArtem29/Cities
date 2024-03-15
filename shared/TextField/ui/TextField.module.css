@@ -1,0 +1,39 @@
+.container {
+  padding: 20px;
+  position: relative;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  background: var(--cool-gray);
+  border-radius: 6px;
+  border: none;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  padding: 5px;
+}
+
+.colorClick {
+  background-color: #8b5cf6;
+}
+
+.colorBlock {
+  background-color: #a1a1aa;
+}

@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: #000000;
+  padding: 17px 16px;
+}
+
+.body {
+  min-height: 320px;
+  min-width: 576px;
+  padding: 40px 15px 20px;
+  overflow: auto;
+}
+
+.messageContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 16px 20px;
+  min-height: 320px;
+  white-space: pre-wrap;
+}
+
+.message {
+  display: block;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+.messagePlayer {
+  border-radius: 12px 12px 0px 12px;
+  background-color: #8b5cf6;
+  color: #ffffff;
+  align-self: flex-end;
+}
+
+.messageAI {
+  border-radius: 12px 12px 12px 0px;
+  background-color: #f5f3ff;
+  color: #3f3f46;
+  align-self: flex-start;
+}
+
+.footer {
+  color: #a1a1aa;
+  display: flex;
+  justify-content: center;
+}

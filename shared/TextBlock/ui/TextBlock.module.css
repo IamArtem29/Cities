@@ -1,0 +1,24 @@
+.title {
+  padding: 17px 0;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #f4f4f5;
+  font-size: var(--regular);
+  color: var(--black);
+}
+
+.info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  color: var(--gray-700);
+}
+
+.info > :last-child {
+  display: flex;
+  justify-content: center;
+  font-size: var(--regular);
+}
