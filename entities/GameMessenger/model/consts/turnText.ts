@@ -1,4 +1,4 @@
-import { EPlayer } from '@/shared/PlayRules/model/enums/EPlayer';
+import { EPlayer } from 'shared/PlayRules/model/enums/EPlayer';
 
 export const turnText = {
   [EPlayer.PLAYER]: 'Сейчас ваша очередь',

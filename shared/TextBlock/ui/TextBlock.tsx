@@ -1,4 +1,4 @@
-import { Button } from '@/shared/Button/ui';
+import { Button } from 'shared/Button/ui';
 import { TextBlockProps } from '../model/interface/TextBlockProps';
 import styles from './TextBlock.module.css';
 

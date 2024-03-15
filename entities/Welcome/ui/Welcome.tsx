@@ -1,4 +1,4 @@
-import { TextBlock } from '@/shared/TextBlock/ui';
+import { TextBlock } from 'shared/TextBlock/ui';
 import { WelcomeProps } from '../model/interfaces/WelcomeProps';
 
 export const Welcome = (props: WelcomeProps) => {

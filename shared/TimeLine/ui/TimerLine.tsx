@@ -1,4 +1,4 @@
-import { totalTime } from '@/shared/PlayRules/model/consts';
+import { totalTime } from 'shared/PlayRules/model/consts';
 import { TimerLineProps } from '../model/interfaces/TimerLineProps';
 
 export const TimerLine = (props: TimerLineProps) => {

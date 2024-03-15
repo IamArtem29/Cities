@@ -1,4 +1,4 @@
-import { cities } from '@/shared/Cities/model/cities';
+import { cities } from 'shared/Cities/model/cities';
 import { ValidateCityInputProps } from './interfaces/ValidateCityInputProps';
 
 export const ValidateCityInput = (props: ValidateCityInputProps) => {

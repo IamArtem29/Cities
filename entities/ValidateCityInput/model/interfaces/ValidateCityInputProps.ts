@@ -1,4 +1,4 @@
-import { IMessage } from '@/shared/PlayRules/model/intefaces/IMessage';
+import { IMessage } from 'shared/PlayRules/model/intefaces/IMessage';
 
 export interface ValidateCityInputProps {
   input: string | undefined;

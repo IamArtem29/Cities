@@ -1,4 +1,4 @@
-import { EResult } from '@/shared/PlayRules/model/enums/EResult';
+import { EResult } from 'shared/PlayRules/model/enums/EResult';
 
 export const textResult = {
   [EResult.WIN]: {

@@ -1,4 +1,4 @@
-import { EPlayer } from '@/shared/PlayRules/model/enums/EPlayer';
+import { EPlayer } from 'shared/PlayRules/model/enums/EPlayer';
 import { MessageTextProps } from '../interfaces/MessageTextProps';
 
 export const messageText = (props: MessageTextProps) => {

@@ -1,4 +1,4 @@
-import { cities } from '@/shared/Cities/model/cities';
+import { cities } from 'shared/Cities/model/cities';
 import { generateAICityProps } from '../interface/generateAICityProps';
 
 export const generateAICity = (props: generateAICityProps) => {

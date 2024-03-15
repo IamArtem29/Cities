@@ -1,10 +1,10 @@
-import { scoreCheck } from '@/shared/PlayRules/model/consts';
+import { Button } from 'shared/Button/ui';
+import { formatTimer } from 'shared/FormatTimer/model/consts';
+import { scoreCheck } from 'shared/PlayRules/model/consts';
+import { EResult } from 'shared/PlayRules/model/enums/EResult';
+import { textResult } from '../consts/textResult';
 import { FinalProps } from '../model/interfaces/FinalProps';
-import { EResult } from '@/shared/PlayRules/model/enums/EResult';
-import { Button } from '@/shared/Button/ui';
-import { formatTimer } from '@/shared/FormatTimer/model/consts';
 import styles from './Final.module.css';
-import { textResult } from '../model/consts/textResult';
 
 export const Final = (props: FinalProps) => {
   const { result, timer, gameLength, lastCity, restartGame } = props;

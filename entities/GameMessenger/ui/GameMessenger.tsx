@@ -1,15 +1,15 @@
-import { EPlayer } from '@/shared/PlayRules/model/enums/EPlayer';
-import { GameMessengerProps } from '../model/interfaces/GameMessengerProps';
-import { turnText } from '../model/consts/turnText';
+import { getLastLetter } from 'entities/GetLastLetter/model';
+import { ValidateCityInput } from 'entities/ValidateCityInput/model';
+import { useState, ChangeEvent } from 'react';
+import { formatTimer } from 'shared/FormatTimer/model/consts';
+import { EPlayer } from 'shared/PlayRules/model/enums/EPlayer';
+import { EResult } from 'shared/PlayRules/model/enums/EResult';
+import { TextField } from 'shared/TextField/ui';
+import { TimerLine } from 'shared/TimeLine/ui/TimerLine';
 import { messageText } from '../model/consts/messageText';
-import { ValidateCityInput } from '@/entities/ValidateCityInput/model';
-import { ChangeEvent, useState } from 'react';
-import { TimerLine } from '@/shared/TimeLine/ui/TimerLine';
+import { turnText } from '../model/consts/turnText';
+import { GameMessengerProps } from '../model/interfaces/GameMessengerProps';
 import styles from './GameMessenger.module.css';
-import { formatTimer } from '@/shared/FormatTimer/model/consts';
-import { EResult } from '@/shared/PlayRules/model/enums/EResult';
-import { getLastLetter } from '@/entities/GetLastLetter/model';
-import { TextField } from '@/shared/TextField/ui/TextField';
 
 export const GameMessenger = (props: GameMessengerProps) => {
   const {

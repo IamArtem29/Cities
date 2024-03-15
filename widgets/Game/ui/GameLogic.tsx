@@ -1,15 +1,15 @@
-import { Final } from '@/entities/Final/ui/Final';
-import { GameMessenger } from '@/entities/GameMessenger/ui/GameMessenger';
-import { EPlayer } from '@/shared/PlayRules/model/enums/EPlayer';
-import { EResult } from '@/shared/PlayRules/model/enums/EResult';
-import { IMessage } from '@/shared/PlayRules/model/intefaces/IMessage';
-import { useEffect, useState } from 'react';
+import { Final } from 'entities/Final/ui/Final';
+import { GameMessenger } from 'entities/GameMessenger/ui/GameMessenger';
+import { getLastLetter } from 'entities/GetLastLetter/model';
+import { Welcome } from 'entities/Welcome/ui';
+import { aiTimer } from 'features/AI/model/consts';
+import { generateAICity } from 'features/AI/model/consts/generateAICity';
+import { useState, useCallback, useEffect } from 'react';
+import { totalTime } from 'shared/PlayRules/model/consts';
+import { EPlayer } from 'shared/PlayRules/model/enums/EPlayer';
+import { EResult } from 'shared/PlayRules/model/enums/EResult';
+import { IMessage } from 'shared/PlayRules/model/intefaces/IMessage';
 import { EStages } from '../model/enums/EStages';
-import { Welcome } from '@/entities/Welcome/ui';
-import { totalTime } from '@/shared/PlayRules/model/consts';
-import { generateAICity } from '@/features/AI/model/consts/generateAICity';
-import { aiTimer } from '@/features/AI/model/consts';
-import { getLastLetter } from '@/entities/GetLastLetter/model';
 
 export const GameLogic = () => {
   const [result, setResult] = useState<EResult | null>(null);
@@ -45,13 +45,13 @@ export const GameLogic = () => {
     startTimer();
   };
 
-  const handleChangePlayer = () => {
+  const handleChangePlayer = useCallback(() => {
     setPlayerTurn((prevState) =>
       prevState === EPlayer.PLAYER ? EPlayer.AI : EPlayer.PLAYER
     );
     updateTimer();
     startTimer();
-  };
+  }, []);
 
   const handleStartGame = () => {
     setCurrentStage(EStages.GAME_MESSANGER);
@@ -60,7 +60,7 @@ export const GameLogic = () => {
   };
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: any;
 
     if (
       currentStage === EStages.GAME_MESSANGER &&
@@ -93,7 +93,7 @@ export const GameLogic = () => {
         }
       }, aiTime * 1000);
     }
-  }, [playerTurn]);
+  }, [handleChangePlayer, messages, playerTurn]);
 
   useEffect(() => {
     if (timer === 0) {
@@ -101,7 +101,7 @@ export const GameLogic = () => {
       setCurrentStage(EStages.FINAL);
       stopTimer();
     }
-  }, [timer]);
+  }, [playerTurn, timer]);
 
   return (
     <>
