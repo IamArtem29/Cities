@@ -1,8 +1,13 @@
 import { LayoutProps } from '../model/LayoutProps';
-import styles from './Layout.module.css';
 
 export const Layout = (props: LayoutProps) => {
   const { children } = props;
 
-  return <div className={styles.layout}>{children}</div>;
+  return (
+    <div className="flex justify-center items-center w-screen h-screen">
+      <div className="max-w-screen-sm w-full border border-black rounded-lg">
+        {children}
+      </div>
+    </div>
+  );
 };

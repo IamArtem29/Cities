@@ -9,7 +9,6 @@ import { TimerLine } from 'shared/TimeLine/ui/TimerLine';
 import { messageText } from '../model/consts/messageText';
 import { turnText } from '../model/consts/turnText';
 import { GameMessengerProps } from '../model/interfaces/GameMessengerProps';
-import styles from './GameMessenger.module.css';
 
 export const GameMessenger = (props: GameMessengerProps) => {
   const {
@@ -36,15 +35,13 @@ export const GameMessenger = (props: GameMessengerProps) => {
       })
     ) {
       const cityInputSTR = cityInput as string;
-      setMessages((prevState) => {
-        return [
-          {
-            city: cityInputSTR.charAt(0).toUpperCase() + cityInputSTR.slice(1),
-            player: playerTurn,
-          },
-          ...prevState,
-        ];
-      });
+      setMessages((prevState) => [
+        {
+          city: cityInputSTR.charAt(0).toUpperCase() + cityInputSTR.slice(1),
+          player: playerTurn,
+        },
+        ...prevState,
+      ]);
       handleChangePlayer();
     } else {
       setResult(EResult.LOSE);
@@ -70,34 +67,36 @@ export const GameMessenger = (props: GameMessengerProps) => {
 
   return (
     <div>
-      <div className={styles.header}>
-        <div>{turnText[playerTurn]}</div>
-        <div>{formatTimer(timer)}</div>
+      <div className="flex justify-between items-center py-4 px-4">
+        <div className="text-base font-normal text-black">
+          {turnText[playerTurn]}
+        </div>
+        <div className="text-xl font-medium text-black">
+          {formatTimer(timer)}
+        </div>
       </div>
       <TimerLine elapsedTime={timer} />
-      <div className={styles.messageContainer}>
-        {messages.map((message, index) => {
-          return (
-            <div
-              key={index}
-              className={`${styles.message} ${
-                message.player === EPlayer.PLAYER
-                  ? styles.messagePlayer
-                  : styles.messageAI
-              }`}
-            >
-              {message.city}
-            </div>
-          );
-        })}
+      <div className="flex flex-col-reverse px-5 py-4 whitespace-pre-wrap h-80 overflow-hidden">
+        {messages.map((message, index) => (
+          <div
+            key={index}
+            className={`py-3 px-6 text-center text-base font-normal ${
+              message.player === EPlayer.PLAYER
+                ? 'rounded-bl-lg rounded-tl-lg rounded-tr-lg bg-violet-500 text-white self-end'
+                : 'rounded-br-lg rounded-tl-lg rounded-tr-lg bg-violet-50 text-gray-700 self-start'
+            }`}
+          >
+            {message.city}
+          </div>
+        ))}
       </div>
-      <div className={styles.footer}>
+      <div className="flex justify-center py-4 text-gray-400 text-sm">
         Всего перечисленно городов: {messages.length}
       </div>
       <TextField
         onClick={onClick}
         onChange={onChange}
-        value={cityInput as string}
+        value={cityInput}
         placeholder={placeholder}
         disabled={disabled}
       />

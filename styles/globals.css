@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --black: #000000;
-  --gray-700: #3f3f46;
-  --gray-400: #a1a1aa;
-  --red-600: #dc2626;
-  --green-600: #16a34a;
-  --cool-gray: #f9fafb;
-  --regular: 16px;
-  --medium: 30px;
-  --medium24: 24px;
-}
-
 body {
   color: #3f3f46;
   font-size: 14px;

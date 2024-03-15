@@ -1,10 +1,13 @@
 import { ButtonProps } from '../model/interfaces/ButtonProps';
-import styles from './Button.module.css';
 
 export const Button = (props: ButtonProps) => {
   const { children, onClick } = props;
+
   return (
-    <div className={styles.button} onClick={onClick}>
+    <div
+      className="p-2 px-4 rounded bg-violet-600 inline-block cursor-pointer text-white text-base font-medium"
+      onClick={onClick}
+    >
       {children}
     </div>
   );

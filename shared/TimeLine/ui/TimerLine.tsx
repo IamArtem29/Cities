@@ -7,21 +7,10 @@ export const TimerLine = (props: TimerLineProps) => {
   const progress = (elapsedTime / totalTime) * 100;
 
   return (
-    <div
-      style={{
-        width: '100%',
-        backgroundColor: '#F4F4F5',
-        height: '5px',
-        overflow: 'hidden',
-      }}
-    >
+    <div className="w-full h-1 bg-gray-200 overflow-hidden">
       <div
-        style={{
-          width: `${progress}%`,
-          backgroundColor: '#C4B5FD',
-          height: '100%',
-          transition: 'width 1s ease-in-out',
-        }}
+        className="h-full bg-purple-400 transition-width duration-1000"
+        style={{ width: `${progress}%` }}
       />
     </div>
   );
